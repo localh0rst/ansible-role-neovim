@@ -1,0 +1,6 @@
+---
+# tasks file for neovim
+- import_tasks: apt-install.yml
+  when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
+- import_tasks: configure-neovim.yml
+  when:  neovim_config_repo

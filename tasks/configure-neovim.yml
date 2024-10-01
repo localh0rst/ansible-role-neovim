@@ -1,0 +1,24 @@
+---
+- name: Check if neovim config path already exists
+  stat:
+    path: "{{ neovim_config_dir }}"
+  register: neovim_config_exists
+
+
+- name: Delete Neovim Config if repo ist set to overwrite
+  file: 
+    path: "{{ neovim_config_dir }}"
+    state: absent
+  become_user: "{{ neovim_user }}"
+  when: 
+    - neovim_overwrite_config
+    - neovim_config_exists.stat.exists
+
+
+- name: Clone Neovim Config Repo
+  git:
+    repo: "{{ neovim_config_repo }}"
+    dest: "{{ neovim_config_dir }}"
+    update: yes
+  become_user: "{{ neovim_user }}"
+  when: neovim_config_repo

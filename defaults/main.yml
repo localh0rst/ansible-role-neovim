@@ -1,0 +1,7 @@
+---
+# defaults file for neovim
+neovim_user: testuser
+neovim_config_dir: "/home/{{ neovim_user}}/config/nvim"
+neovim_config_repo:
+neovim_overwrite_config: false
+
