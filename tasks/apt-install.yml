@@ -9,6 +9,6 @@
     state: present
     update_cache: yes
     name: 
-      neovim
-      git
+      - neovim
+      - git
 
