@@ -3,7 +3,7 @@
 - import_tasks: apt-install.yml
   when: 
     - ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
-    - neovim_installtype == 'distro'
+    - neovim_install_type == 'distro'
 
 - import_tasks: additional_packages.yml
   when: 
@@ -12,7 +12,7 @@
 
 - import_tasks: appimage-install.yml
   when: 
-    - neovim_installtype == 'appimage'
+    - neovim_install_type == 'appimage'
 
 - import_tasks: configure-neovim.yml
   when:  neovim_config_repo
