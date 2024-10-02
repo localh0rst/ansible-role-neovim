@@ -1,5 +1,5 @@
 ---
-- name: Add neovim repo
+- name: Add repository
   apt_repository:
     repo: ppa:neovim-ppa/stable
     state: present
@@ -12,9 +12,3 @@
       - neovim
       - git
 
-- name: Install additional packages
-  apt:
-    state: present
-    update_cache: yes
-    name: "{{ item }}"
-  with_items: "{{ neovim_additional_packages }}"

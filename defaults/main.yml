@@ -1,5 +1,10 @@
 ---
 # defaults file for neovim
+
+# Install type can be appimage or distro package
+neovim_install_type: appimage
+neovim_appimage_url: "https://github.com/neovim/neovim/releases/latest/download/nvim.appimage"
+neovim_appimage_path: "/home/{{ neovim_user }}/.local/bin"
 neovim_user: testuser
 neovim_config_dir: "/home/{{ neovim_user}}/config/nvim"
 neovim_config_repo:

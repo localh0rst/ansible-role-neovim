@@ -1,0 +1,16 @@
+---
+- name: Create Appimage bin directory
+  file: 
+    path: "{{ neovim_appimage_path }}"
+    state: directory
+    mode: '0700'
+    owner: "{{ neovim_user }}"
+    group: "{{ neovim_user }}"
+
+- name: Download Neovim Appimage
+  get_url:
+    url: "{{ neovim_appimage_url }}"
+    dest: "{{ neovim_appimage_path }}/nvim.appimage"
+    mode: '0700'
+    owner: "{{ neovim_user }}"
+    group: "{{ neovim_user }}"

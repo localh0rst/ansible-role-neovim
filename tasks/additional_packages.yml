@@ -1,0 +1,7 @@
+---
+- name: Install additional packages
+  apt:
+    state: present
+    update_cache: yes
+    name: "{{ item }}"
+  with_items: "{{ neovim_additional_packages }}"
