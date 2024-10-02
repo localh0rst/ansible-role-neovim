@@ -1,6 +1,16 @@
 ---
 # tasks file for neovim
 - import_tasks: apt-install.yml
-  when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
+  when: 
+    - ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
+    - neovim_installtype == 'apt'
+
+- import_tasks: additional_packages.yml
+  when: neovim_additional_packages
+
+- import_tasks: appimage-install.yml
+  when: 
+    - neovim_installtype == 'appimage'
+
 - import_tasks: configure-neovim.yml
   when:  neovim_config_repo
