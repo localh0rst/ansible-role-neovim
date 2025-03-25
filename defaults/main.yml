@@ -3,7 +3,7 @@
 
 # Install type can be appimage or distro package
 neovim_install_type: appimage
-neovim_appimage_url: "https://github.com/neovim/neovim/releases/latest/download/nvim.appimage"
+neovim_appimage_url: "https://github.com/neovim/neovim/releases/download/stable/nvim-linux-x86_64.appimage"
 neovim_appimage_path: "/home/{{ neovim_user }}/.local/bin"
 neovim_user: testuser
 neovim_config_dir: "/home/{{ neovim_user}}/config/nvim"
